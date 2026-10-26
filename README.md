@@ -1,10 +1,10 @@
-# CommitCarousel
+# PeerTurn
 
 **A tiny, Git-native collaboration protocol for AI coding agents.**
 
 *Implement → Review → Handoff → Rotate → Continue.*
 
-CommitCarousel is an experimental way to let **two or more independently running coding agents** work through an authorized backlog together. It uses ordinary **Markdown files and Git commits** to communicate who is implementing, who is reviewing, what is finished, and what needs a maintainer's decision.
+PeerTurn is an experimental way to let **two or more independently running coding agents** work through an authorized backlog together. It uses ordinary **Markdown files and Git commits** to communicate who is implementing, who is reviewing, what is finished, and what needs a maintainer's decision.
 
 There is no mandatory server, framework, database, MCP integration, or dedicated orchestration process. You bring your own CLI agents, start them in separate terminals in **the same Git working tree**, and give each a fixed identity: `Agent A`, `Agent B`, `Agent C`, and so on.
 
@@ -74,7 +74,7 @@ You need Git and the coding CLIs of your choice. The examples below use four age
 
 For example, open four terminal tabs in `my-project` and start a different supported coding CLI in each. In informal use, this setup has been tried with **Grok, Claude Code, Codex and Gemini** (including Gemini-based tooling). This is not an official integration or a compatibility certification; available CLI commands and behavior vary by version.
 
-The identity letters are **roles within CommitCarousel**, not provider names. You choose which CLI is A, B, C or D, and the role stays fixed for that session.
+The identity letters are **roles within PeerTurn**, not provider names. You choose which CLI is A, B, C or D, and the role stays fixed for that session.
 
 ### 3. Give Agent A the goal and authorize bootstrap
 
