@@ -54,6 +54,3 @@ If B finds a **substantive unresolved dispute**, it commits `DEFER_REQUESTED`, t
 - After at least **one hour without an owner commit**, follow the protocol's carefully constrained inactivity/bypass procedure. Time alone is not proof of quota exhaustion or a dead session. Never introduce concurrent writers.
 - **Never bypass `Owner: MAINTAINER`.**
 
-## Notes on the external quota monitor
-
-The provided v2.3 protocol does **not** specify the optional `AGENT_QUOTAS.json` integration. If using the separate quota-aware extension, add its exact shared output path and behavior to the canonical collaboration protocol. The JSON and success of a small CLI probe should never be treated as proof that a particular coding session is alive.

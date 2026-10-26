@@ -190,6 +190,7 @@ The current v2.3 protocol specifies:
 In informal hands-on testing with recent Grok, Claude Code, Codex and Gemini versions, the workflow has generally progressed through multiple tasks and reviews. It is **not very robust yet**, however:
 
 - A CLI sometimes exits or becomes unavailable, including during memory pressure.
+- A CLI stops because it has exaust its quota / tokens. 
 - Sessions can stop polling or lose context, especially after long periods.
 - Occasionally an agent forgets its assigned identity (for example, Agent B says it is waiting for Agent B).
 - A waiting agent may not be reawakened automatically even when the next handoff has been committed.
@@ -198,10 +199,6 @@ In informal hands-on testing with recent Grok, Claude Code, Codex and Gemini ver
 If a session ends, restart it explicitly with its original identity, point it to the **current committed handoff**, and check ownership before resuming. Do **not** reuse stale session assumptions.
 
 For truly unattended execution, a separate supervisor that can observe processes, stop old writers and safely wake the appropriate CLI would be needed. That is **not included** in this repo.
-
-## Optional quota monitor
-
-An independently developed local quota-status monitor can write an `AGENT_QUOTAS.json` file for different providers. That tool is **optional and not shipped here**, and the supplied v2.3 protocol does not require or define a JSON path. A successful CLI probe only shows that a small request worked; it **does not prove** that a particular coding session is alive or that its remaining subscription quota is known.
 
 ## Safety and scope
 
@@ -219,4 +216,3 @@ Read the full [`AGENT_COLLABORATION.md`](AGENT_COLLABORATION.md) before using th
 
 This is a **small experimental protocol**, not a mature framework. If you try it with other agent combinations, useful feedback includes identity/context failures, incorrect ownership handoffs, long-running polling behavior and safe recovery procedures.
 
-**Licensing:** choose and add an explicit open-source license before presenting the repository as licensed open source. No license is assumed by this template package.
